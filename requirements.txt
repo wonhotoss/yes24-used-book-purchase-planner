@@ -1,6 +1,6 @@
 beautifulsoup4
 lxml
 httpx
-pulp>=3.3
+pulp>=3.3,<4  # 4.0부터 CBC 번들이 빠져 PULP_CBC_CMD가 없다
 pytest
 playwright  # --verify-cart 때만. 설치 후 `playwright install chromium`
