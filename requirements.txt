@@ -3,3 +3,4 @@ lxml
 httpx
 pulp>=3.3
 pytest
+playwright  # --verify-cart 때만. 설치 후 `playwright install chromium`

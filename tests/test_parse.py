@@ -62,3 +62,10 @@ def test_parse_fee(text, want):
 def test_parse_fee_unknown():
     with pytest.raises(ValueError):
         parse_fee("배송비 : 착불", "판매자 배송")
+
+
+def test_cart_summary():
+    from ubc.cart import parse_summary
+    t = "총 상품금액 총 추가금액 총 할인금액 최종 결제금액 32,650원 + 3,000원 + 0원 + 35,650원 정가 47,100원에서"
+    assert parse_summary(t) == (32650, 3000, 35650)
+    assert parse_summary("카트에 담긴 상품이 없습니다") == (None, None, None)
